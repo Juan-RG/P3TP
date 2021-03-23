@@ -5,9 +5,8 @@
 #pragma once
 
 
-class ProductoToxicos {
+class SerVivo {
 
 };
-
 
 

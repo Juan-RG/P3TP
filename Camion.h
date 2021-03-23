@@ -6,10 +6,10 @@
 
 #include "Almacenable.h"
 
-class Camiones: Almacenable {
+class Camion: Almacenable {
 
 public:
-    Camiones(double capacidad);
+    Camion(double capacidad);
     std::string to_string();
     std::string nombre();
     double volumen();

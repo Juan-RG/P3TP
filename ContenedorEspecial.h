@@ -6,10 +6,10 @@
 
 
 #include "ProductoToxicos.h"
-#include "SeresVivos.h"
+#include "SerVivo.h"
 #include "Contenedor.h"
 
-class ContenedorEspecial : Contenedor, SeresVivos, ProductoToxicos {
+class ContenedorEspecial : Contenedor, SerVivo, ProductoToxicos {
 
 };
 
