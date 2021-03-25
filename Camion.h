@@ -6,7 +6,7 @@
 
 #include "Almacen.h"
 
-class Camion: Almacen {
+/*class Camion : Almacen<T> {
 
 public:
     Camion(double capacidad);
@@ -14,7 +14,7 @@ public:
     std::string nombre();
     double volumen();
     double peso();
-};
+};*/
 
 
 

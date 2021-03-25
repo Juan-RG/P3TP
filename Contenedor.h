@@ -7,13 +7,11 @@
 #include "Carga.h"
 #include "Almacen.h"
 
-template <>
-class Contenedor<Carga> : Carga, Almacen { //ESTO SE PUEDE????
-/*template <typename T>
-class Contenedor: Carga, Almacen {*/
+template <typename T>
+class Contenedor : public Carga, public Almacen<T> {
 
 public:
-    Contenedor(double volumen);
+    Contenedor(double volumen_);
     //std::string getNombre() const override;
     std::string to_string() const override;
 };

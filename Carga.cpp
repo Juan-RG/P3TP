@@ -18,4 +18,7 @@ double Carga::getVolumen() const {
     return volumen;
 }
 
-
+std::string Carga::to_string()  const{
+    std::string hola = "holaa";
+    return hola;
+}

@@ -1,5 +1,6 @@
-#include "practica3.h"
+//#include "practica3.h"
 #include "Carga.h"
+#include "Almacen.h"
 #include "Contenedor.h"
 #include "Producto.h"
 #include "Toxico.h"
@@ -11,7 +12,13 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    Contenedor<Carga>	contenedor_estandar(4);
+    //Contenedor<Carga> contenedor(10);
+    Producto longaniza_graus("Longaniza de Graus",0.5,0.8);
+    cout << longaniza_graus.to_string();
+
+    //contenedor.guardar(longaniza_graus);
+
+    /*Contenedor<Carga>	contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);
     Contenedor<SerVivo>	contenedor_servivo(2);
 
@@ -48,7 +55,7 @@ int main(int argc, char** argv)
         cout << "Camion lleno con Trenzas de Almudevar" << endl;
 
     cout << endl;
-    cout << camion << endl;
+    cout << camion << endl;*/
 
 /*
 La salida del programa hasta aquí deberia ser parecida a lo siguiente:
@@ -68,7 +75,7 @@ Camion [10 m3] [115.9 kg]
 
 */
 
-    Contenedor<Carga>	otro_contenedor_estandar(1);
+    /*Contenedor<Carga>	otro_contenedor_estandar(1);
     Contenedor<Toxico>	otro_contenedor_toxico(1);
     Contenedor<SerVivo>	otro_contenedor_servivo(1);
     contenedor_estandar.guardar(otro_contenedor_estandar);
@@ -77,5 +84,5 @@ Camion [10 m3] [115.9 kg]
     // Estas lineas no deberian compilar
     //contenedor_estandar.guardar(camion);
     //contenedor_toxico.guardar(otro_contenedor_toxico);
-    //contenedor_servivo.guardar(otro_contenedor_servivo);
+    //contenedor_servivo.guardar(otro_contenedor_servivo);*/
 }

@@ -7,7 +7,7 @@
 #include "Carga.h"
 #include <string>
 
-class Producto : Carga {
+class Producto : public Carga {
 /*private:
     std::string nombre;*/
 
