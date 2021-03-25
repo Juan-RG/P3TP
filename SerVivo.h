@@ -4,8 +4,9 @@
 
 #pragma once
 
+#include "CargaEspecial.h"
 
-class SerVivo {
+class SerVivo : CargaEspecial {
 
 };
 

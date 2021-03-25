@@ -4,8 +4,9 @@
 
 #pragma once
 
+#include "CargaEspecial.h"
 
-class Toxico {
+class Toxico : CargaEspecial {
 
 };
 

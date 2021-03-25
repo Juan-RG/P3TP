@@ -2,18 +2,18 @@
 // Created by Juan on 21/03/2021.
 //
 
-#ifndef P3_CONTENEDOR_H
-#define P3_CONTENEDOR_H
-
+#pragma once
 
 #include "Carga.h"
-#include "Almacenable.h"
+#include "Almacen.h"
 
-class Contenedor: Carga, Almacenable {
+template <>
+class Contenedor<Carga> : Carga, Almacen { //ESTO SE PUEDE????
+/*template <typename T>
+class Contenedor: Carga, Almacen {*/
 
 public:
     Contenedor(double volumen);
+    //std::string getNombre() const override;
+    std::string to_string() const override;
 };
-
-
-#endif //P3_CONTENEDOR_H

@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "Almacenable.h"
+#include "Almacen.h"
 
-class Camion: Almacenable {
+class Camion: Almacen {
 
 public:
     Camion(double capacidad);
