@@ -8,15 +8,16 @@
 #include "Carga.h"
 
 template <typename T>
-class Almacen { //hace falta template?????? CREO QUE NO
+class Almacen {
 protected:
     double capacidad;               //TODO:Constructor para meter capacidad de cada camion/contenedor?
                                     //TODO:que sera capacidad(volumen)????
-    std::vector<Carga> elementos;
+    std::vector<T*> elementos;
 
 public:
     Almacen(double capacidad_);
-    bool guardar(const T& elemento);
+
+    virtual bool guardar(Carga& elemento) = 0;
 
 };
 

@@ -12,11 +12,16 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    //Contenedor<Carga> contenedor(10);
-    Producto longaniza_graus("Longaniza de Graus",0.5,0.8);
-    cout << longaniza_graus.to_string();
+    Contenedor<Carga> contenedor(10);
 
-    //contenedor.guardar(longaniza_graus);
+    Producto longaniza_graus("Longaniza de Graus",0.5,0.8);
+    Producto adoquines_zaragoza("Adoquines de Zaragoza",0.1,5.0);
+    Producto trenzas_almudevar("Trenzas de Almudevar",0.5,0.8);
+
+    contenedor.guardar(trenzas_almudevar);
+    contenedor.guardar(adoquines_zaragoza);
+    contenedor.guardar(longaniza_graus);
+    cout << contenedor.to_string() << endl;
 
     /*Contenedor<Carga>	contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);

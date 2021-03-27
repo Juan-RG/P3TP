@@ -14,4 +14,5 @@ public:
     Contenedor(double volumen_);
     //std::string getNombre() const override;
     std::string to_string() const override;
+    bool guardar(Carga& elemento) override;
 };
