@@ -14,7 +14,7 @@ protected:                                          //TODO: si no lo pongo prote
     std::string nombre;                             //Mejor poner nombre aqui porque toda carga tiene un nombre no?
 
 public:
-    Carga(const std::string &nombre_, double  volumen_, double peso_);          //TODO: Hay alguna otra forma de hacer esto?
+    Carga(const std::string nombre, double  volumen_, double peso_);          //TODO: Hay alguna otra forma de hacer esto?
     double getPeso() const;                         //Tanto vol como peso en todas clases devuelven lo mismo
     double getVolumen() const;
     std::string getNombre() const;                  //TODO: Igual esto hay que definirlo en esta clase y pasar nombre al constructor

@@ -4,7 +4,7 @@
 
 #include "Contenedor.h"
 
-template <>
+/*
 Contenedor<Carga>::Contenedor(double volumen_) : Carga::Carga("Contenedor", 0, 0), Almacen<Carga>(volumen_) { }
 
 template <>
@@ -36,3 +36,5 @@ std::string Contenedor<Carga>::to_string() const {
 
     return frase;
 }
+
+ */

@@ -6,8 +6,13 @@
 
 #include "CargaEspecial.h"
 
-class SerVivo : CargaEspecial {
-
+class SerVivo : public CargaEspecial {
+public:
+    SerVivo();
+    std::string to_string() const override{
+        return this->nombre + " [" + std::to_string(this->volumen)
+               + " m3] [" + std::to_string(this->peso) + " kg]";
+    }
 };
 
 

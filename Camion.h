@@ -6,15 +6,24 @@
 
 #include "Almacen.h"
 
-/*class Camion : Almacen<T> {
+template <typename T>
+class Camion : public Almacen<T> {
 
 public:
-    Camion(double capacidad);
+    Camion(double capacidad) : Almacen<T>(capacidad){};
+    /*
+    bool guardar(Carga& elemento){
+        this->elementos.push_back(elemento);
+        return true;
+    };
+     */
+    /*
     std::string to_string();
     std::string nombre();
     double volumen();
     double peso();
-};*/
+     */
+};
 
 
 

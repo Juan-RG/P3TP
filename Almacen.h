@@ -15,9 +15,9 @@ protected:
     std::vector<T*> elementos;
 
 public:
-    Almacen(double capacidad_);
+    Almacen(double capacidad): capacidad(capacidad) {};
 
-    virtual bool guardar(Carga& elemento) = 0;
+  //  virtual bool guardar(Carga& elemento) = 0;
 
 };
 
