@@ -6,36 +6,37 @@
 #include <iostream>
 #include "Camion.h"
 
+void test_contedor_lleno();
+
+void test_camion_lleno();
+
 using namespace std;
 
 int main(int argc, char** argv)
 {
+    test_contedor_lleno();
+    test_camion_lleno();
     Contenedor<Carga>	contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);
     Contenedor<SerVivo>	contenedor_servivo(2);
-
 
     Producto longaniza_graus("Longaniza de Graus",0.5,0.8);
     contenedor_estandar.guardar(longaniza_graus);
     Producto adoquines_zaragoza("Adoquines de Zaragoza",0.1,5.0);
     contenedor_estandar.guardar(adoquines_zaragoza);
 
-    cout << contenedor_estandar.to_string();
     Toxico discos_melendi("Discos de Melendi",1,10);
-    cout << contenedor_estandar.guardar(discos_melendi);
-    cout << contenedor_estandar.to_string();
-
     // Esto no deberia compilar
     // contenedor_estandar.guardar(discos_melendi);
-//    contenedor_toxico.guardar(discos_melendi);
+    contenedor_toxico.guardar(discos_melendi);
 
-//    Camion<double> camion(10.0);
+    Camion camion(10);
 
-//    SerVivo elvis_presley("Elvis Presley",0.1,100);
+    SerVivo elvis_presley("Elvis Presley",0.1,100);
     // Esto no deberia compilar
     // camion.guardar(elvis_presley);
-//    contenedor_servivo.guardar(elvis_presley);
-/*
+    contenedor_servivo.guardar(elvis_presley);
+
     if (!camion.guardar(contenedor_estandar))
         cout << "Camion lleno con contenedor estandar" << endl;
     if (!camion.guardar(contenedor_toxico))
@@ -52,7 +53,7 @@ int main(int argc, char** argv)
         cout << "Camion lleno con Trenzas de Almudevar" << endl;
 
     cout << endl;
-//    cout << camion << endl;
+    cout << camion << endl;
 
 /*
 La salida del programa hasta aquí deberia ser parecida a lo siguiente:
@@ -82,5 +83,30 @@ Camion [10 m3] [115.9 kg]
     //contenedor_estandar.guardar(camion);
     //contenedor_toxico.guardar(otro_contenedor_toxico);
     //contenedor_servivo.guardar(otro_contenedor_servivo);
+}
+}
+
+void test_camion_lleno() {
+    Camion<Carga>	camion1(4);
+    Contenedor<Carga>	contenedor2(4);
+    camion1.guardar(contenedor2);
+
+    Contenedor<Carga>	contenedor3(3);
+    bool introducido = camion1.guardar(contenedor3);
+    if (introducido){
+        cerr << "Test_camion_lleno_ FALLIDO";
+    }
+}
+
+void test_contedor_lleno() {
+    Contenedor<Carga>	contenedor1(4);
+    Contenedor<Carga>	contenedor2(4);
+    contenedor1.guardar(contenedor2);
+
+    Contenedor<Carga>	contenedor3(3);
+    bool introducido = contenedor1.guardar(contenedor3);
+    if (introducido){
+        cerr << "Test_contenedor_lleno_ FALLIDO";
+    }
 }
 

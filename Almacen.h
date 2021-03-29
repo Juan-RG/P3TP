@@ -17,7 +17,7 @@ protected:
 public:
     Almacen(double capacidad): capacidad(capacidad) {};
 
-  //  virtual bool guardar(Carga& elemento) = 0;
+    virtual bool guardar(T& elemento) = 0;
 
 };
 

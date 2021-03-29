@@ -5,17 +5,15 @@
 #pragma once
 
 #include "Carga.h"
+#include "CargaNormal.h"
 #include <string>
 
-class Producto : public Carga {
-/*private:
-    std::string nombre;*/
+class Producto : public CargaNormal {
+
 
 public:
     Producto(const std::string& nombre_, double  volumen_, double peso_);
 
-    //std::string getNombre() const override;
-    //std::string to_string() const override;
     std::string to_string() const override;
 
 };

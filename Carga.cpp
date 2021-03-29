@@ -4,7 +4,7 @@
 
 #include "Carga.h"
 
-Carga::Carga(const std::string nombre, double volumen_, double peso_) : nombre(nombre), volumen(volumen_), peso(peso_) { }
+Carga::Carga(const std::string nombre_, double volumen_, double peso_) : nombre(nombre_), volumen(volumen_), peso(peso_) { }
 
 std::string Carga::getNombre() const {
     return nombre;
