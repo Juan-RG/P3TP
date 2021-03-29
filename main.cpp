@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 
     Toxico discos_melendi("Discos de Melendi",1,10);
     // Esto no deberia compilar
-    // contenedor_estandar.guardar(discos_melendi);
+    //contenedor_estandar.guardar(discos_melendi);
     contenedor_toxico.guardar(discos_melendi);
 
     Camion camion(10);
@@ -54,7 +54,7 @@ int main(int argc, char** argv)
         cout << "Camion lleno con Trenzas de Almudevar" << endl;
 
     cout << endl;
-    //cout << camion << endl;
+    cout << camion << endl;
 
 /*
 La salida del programa hasta aquí deberia ser parecida a lo siguiente:
