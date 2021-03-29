@@ -16,6 +16,7 @@ int main(int argc, char** argv)
 {
     test_contedor_lleno();
     test_camion_lleno();
+
     Contenedor<Carga>	contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);
     Contenedor<SerVivo>	contenedor_servivo(2);
@@ -53,7 +54,7 @@ int main(int argc, char** argv)
         cout << "Camion lleno con Trenzas de Almudevar" << endl;
 
     cout << endl;
-    cout << camion << endl;
+    //cout << camion << endl;
 
 /*
 La salida del programa hasta aquí deberia ser parecida a lo siguiente:
@@ -84,10 +85,11 @@ Camion [10 m3] [115.9 kg]
     //contenedor_toxico.guardar(otro_contenedor_toxico);
     //contenedor_servivo.guardar(otro_contenedor_servivo);
 }
-}
+
+
 
 void test_camion_lleno() {
-    Camion<Carga>	camion1(4);
+    Camion	camion1(4);
     Contenedor<Carga>	contenedor2(4);
     camion1.guardar(contenedor2);
 

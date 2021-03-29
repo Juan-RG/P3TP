@@ -7,13 +7,13 @@
 #include <iostream>
 #include "Carga.h"
 #include "Almacen.h"
-#include "CargaNormal.h"
+
 
 template <typename T>
-class Contenedor : public CargaNormal, public Almacen<T> {
+class Contenedor : public Carga, public Almacen<T> {
 
 public:
-    Contenedor(double volumen_) : CargaNormal("Contenedor", volumen_, 0), Almacen<T>(volumen_){}; //toDo: Error si introduce volumen 0 quitado por almacen
+    Contenedor(double volumen_) : Carga("Contenedor", volumen_, 0), Almacen<T>(volumen_){}; //toDo: Error si introduce volumen 0 quitado por almacen
 
 
     bool guardar(T& elemento) override {
@@ -34,7 +34,7 @@ public:
         //TODO: ponga una cosa u otra (carga toxica, carga estandar etc)???
 
         std::string frase = this->nombre + " [" + std::to_string(this->capacidad)
-                            + " m3] [" + std::to_string(this->peso ) + " kg]\n";
+                            + " m3] [" + std::to_string(this->peso ) + " kg] \n";
 
 
         for(T* a :  this->elementos){  //Devuelve el toString de cada uno de los elementos guardados

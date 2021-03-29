@@ -5,10 +5,9 @@
 #pragma once
 
 #include "Carga.h"
-#include "CargaNormal.h"
 #include <string>
 
-class Producto : public CargaNormal {
+class Producto : public Carga {
 
 
 public:

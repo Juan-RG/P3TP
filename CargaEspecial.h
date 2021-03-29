@@ -10,7 +10,12 @@ class CargaEspecial : public Carga {
 
 public:
     CargaEspecial(std::string nombre_, double  volumen_, double peso_) : Carga(nombre_, volumen_, peso_) {};
-    virtual std::string to_string() const = 0;
+    std::string to_string() const override{
+        return this->nombre + " [" + std::to_string(this->volumen)
+               + " m3] [" + std::to_string(this->peso) + " kg]";
+    }
+
+
 };
 
 

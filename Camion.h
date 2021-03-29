@@ -6,19 +6,18 @@
 
 #include "Almacen.h"
 
-template <typename T>
-class Camion : public Almacen<T> {
+
+class Camion : public Almacen<Carga> {
 private:
     double volumen;
     double peso;
     std::string nombre;
 
-    //std::vector<Carga> elementos;
 public:
     //Camion(double capacidad) : Almacen<T>(capacidad){}; //todo: Preguntar
-    Camion(double capacidad) : Almacen<T>(capacidad){};
+    Camion(double capacidad) : Almacen<Carga>(capacidad){};
 
-    bool guardar(T& elemento){
+    bool guardar(Carga& elemento){
         if(this->capacidad >= elemento.getVolumen()){     //Si tiene espacio en el contenedor
             this->elementos.push_back(&elemento);       //lo guarda al final, como una cola
             this->capacidad -= elemento.getVolumen();    //se reduce la capacidad de cosas que puede meter
