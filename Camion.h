@@ -17,6 +17,17 @@ public:
     //Camion(double capacidad) : Almacen<T>(capacidad){}; //todo: Preguntar
     Camion(double capacidad) : nombre("Camion"), Almacen<Carga>(capacidad){};
 
+    bool guardar(Carga& elemento) {
+        if(this->capacidad >= elemento.getVolumen()){     //Si tiene espacio en el contenedor
+            Almacen<Carga>::guardar(elemento); //se reduce la capacidad de cosas que puede meter
+            this->peso += elemento.getPeso();
+            this->volumen += elemento.getVolumen();
+            return true;
+        } else{
+            return false;
+        }
+    }
+/*
     bool guardar(Carga& elemento){
         if(this->capacidad >= elemento.getVolumen()){     //Si tiene espacio en el contenedor
             this->elementos.push_back(&elemento);       //lo guarda al final, como una cola
@@ -28,7 +39,7 @@ public:
             return false;
         }
     };
-
+*/
     std::string getNombre() const {
         return nombre;
     }

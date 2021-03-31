@@ -17,7 +17,12 @@ protected:
 public:
     Almacen(double capacidad): capacidad(capacidad) {};
 
-    virtual bool guardar(T& elemento) = 0;
+    //virtual bool guardar(T& elemento) = 0;
+
+    bool guardar(T& elemento){
+           elementos.push_back(&elemento);       //lo guarda al final, como una cola
+           capacidad -= elemento.getVolumen();    //se reduce la capacidad de cosas que puede meter
+    };
 
 };
 

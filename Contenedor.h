@@ -16,11 +16,9 @@ public:
     Contenedor(double volumen_) : Carga("Contenedor", volumen_, 0), Almacen<T>(volumen_){}; //toDo: Error si introduce volumen 0 quitado por almacen
 
 
-    bool guardar(T& elemento) override {
-
+    bool guardar(T& elemento) {
         if(this->capacidad >= elemento.getVolumen()){     //Si tiene espacio en el contenedor
-            this->elementos.push_back(&elemento);       //lo guarda al final, como una cola
-            this->capacidad -= elemento.getVolumen();    //se reduce la capacidad de cosas que puede meter
+            Almacen<T>::guardar(elemento); //se reduce la capacidad de cosas que puede meter
             this->peso += elemento.getPeso();
             this->volumen += elemento.getVolumen();
             return true;
