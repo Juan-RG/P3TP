@@ -23,6 +23,7 @@ public:
     double getVolumen() const {
         return volumen;
     }
+
     std::string to_string() const override{
         return this->nombre + " [" + std::to_string(this->volumen)
                + " m3] [" + std::to_string(this->peso) + " kg]";

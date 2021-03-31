@@ -14,8 +14,17 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    test_contedor_lleno();
     test_camion_lleno();
+    test_contedor_lleno();
+
+    //Todo: hacer
+    //test_comprobar toxicos con otros. Camion con toxicos
+    //test comprobar seres vivos con otros
+    //test de comprobacion de to_string --> de los diferentes clase 6-8
+    //Comporbar el metodo guardar en camion y en contenedor y comprobar que todo va okey
+
+
+
 
     Contenedor<Carga>	contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);
@@ -28,7 +37,7 @@ int main(int argc, char** argv)
 
     Toxico discos_melendi("Discos de Melendi",1,10);
     // Esto no deberia compilar
-    //contenedor_estandar.guardar(discos_melendi);
+    // contenedor_estandar.guardar(discos_melendi);
     contenedor_toxico.guardar(discos_melendi);
 
     Camion camion(10);
@@ -85,6 +94,8 @@ Camion [10 m3] [115.9 kg]
     //contenedor_toxico.guardar(otro_contenedor_toxico);
     //contenedor_servivo.guardar(otro_contenedor_servivo);
 }
+
+
 
 
 

@@ -1,6 +1,3 @@
-//
-// Created by Juan on 21/03/2021.
-//
 
 #pragma once
 
@@ -19,7 +16,7 @@ public:
 
     //virtual bool guardar(T& elemento) = 0;
 
-    bool guardar(T& elemento){
+    void guardar(T& elemento){
            elementos.push_back(&elemento);       //lo guarda al final, como una cola
            capacidad -= elemento.getVolumen();    //se reduce la capacidad de cosas que puede meter
     };

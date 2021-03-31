@@ -7,21 +7,21 @@
 #include "Almacen.h"
 
 
-class Camion : public Almacen<Carga> {
+class Camion : public Almacen<Carga>, Objeto {
 private:
-    double volumen;
-    double peso;
-    std::string nombre;
+    //double volumen;
+    //double peso;
+    //std::string nombre;
 
 public:
     //Camion(double capacidad) : Almacen<T>(capacidad){}; //todo: Preguntar
-    Camion(double capacidad) : nombre("Camion"), Almacen<Carga>(capacidad){};
+    Camion(double capacidad) : Objeto("Camion", capacidad, 0), Almacen<Carga>(capacidad){};
 
     bool guardar(Carga& elemento) {
-        if(this->capacidad >= elemento.getVolumen()){     //Si tiene espacio en el contenedor
+        if(this->capacidad >= elemento.getVolumen()){      //Si tiene espacio en el contenedor
             Almacen<Carga>::guardar(elemento); //se reduce la capacidad de cosas que puede meter
             this->peso += elemento.getPeso();
-            this->volumen += elemento.getVolumen();
+           // this->volumen -= elemento.getVolumen();
             return true;
         } else{
             return false;
@@ -40,6 +40,7 @@ public:
         }
     };
 */
+/*
     std::string getNombre() const {
         return nombre;
     }
@@ -51,6 +52,10 @@ public:
     double getVolumen() const {
         return volumen;
     }
+*/
+    std::string to_string() const {
+        return nombre + " " + std::to_string(capacidad) + " " + std::to_string(volumen);
+    }
 
     friend std::ostream& operator<<(std::ostream& os, const Camion& dt);
 
@@ -58,7 +63,7 @@ public:
 
 std::ostream& operator<<(std::ostream& os, const Camion& ca)
 {
-    os << ca.nombre + " [" + std::to_string(ca.capacidad)
+    os << ca.nombre + " [" + std::to_string(ca.volumen)
                         + " m3] [" + std::to_string(ca.peso ) + " kg] \n";
 
 

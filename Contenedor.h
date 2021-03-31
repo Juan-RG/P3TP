@@ -13,14 +13,14 @@ template <typename T>
 class Contenedor : public Carga, public Almacen<T> {
 
 public:
-    Contenedor(double volumen_) : Carga("Contenedor", volumen_, 0), Almacen<T>(volumen_){}; //toDo: Error si introduce volumen 0 quitado por almacen
+    Contenedor(double capacidad) : Carga("Contenedor", capacidad, 0), Almacen<T>(capacidad){}; //toDo: Error si introduce volumen 0 quitado por almacen
 
 
     bool guardar(T& elemento) {
         if(this->capacidad >= elemento.getVolumen()){     //Si tiene espacio en el contenedor
             Almacen<T>::guardar(elemento); //se reduce la capacidad de cosas que puede meter
             this->peso += elemento.getPeso();
-            this->volumen += elemento.getVolumen();
+            //this->volumen -= elemento.getVolumen();
             return true;
         } else{
             return false;
@@ -31,7 +31,7 @@ public:
         //TODO: COMO PONGO LO DE CARGA ESTANDAR? meto otro string tipo y que dependiendo de la carga que metas ese string
         //TODO: ponga una cosa u otra (carga toxica, carga estandar etc)???
 
-        std::string frase = this->nombre + " [" + std::to_string(this->capacidad)
+        std::string frase = this->nombre + " [" + std::to_string(this->volumen)
                             + " m3] [" + std::to_string(this->peso ) + " kg] \n";
 
 
