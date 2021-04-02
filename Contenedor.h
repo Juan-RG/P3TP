@@ -18,9 +18,8 @@ public:
 
     bool guardar(T& elemento) {
         if(this->capacidad >= elemento.getVolumen()){     //Si tiene espacio en el contenedor
-            Almacen<T>::guardar(elemento); //se reduce la capacidad de cosas que puede meter
+            Almacen<T>::guardar(elemento);                //se reduce la capacidad de cosas que puede meter
             this->peso += elemento.getPeso();
-            //this->volumen -= elemento.getVolumen();
             return true;
         } else{
             return false;
@@ -29,11 +28,10 @@ public:
 
     std::string to_string() const override {
         //TODO: COMO PONGO LO DE CARGA ESTANDAR? meto otro string tipo y que dependiendo de la carga que metas ese string
-        //TODO: ponga una cosa u otra (carga toxica, carga estandar etc)???
+        //TODO: ponga una cosa u otra (carga toxica, carga estandar etc)??? SOLUCIONADO???
 
         std::string frase = this->nombre + " [" + std::to_string(this->volumen)
-                            + " m3] [" + std::to_string(this->peso ) + " kg] \n";
-
+                            + " m3] [" + std::to_string(this->peso) + " kg] de " + this->elementos[0]->getTipo() + "\n";
 
         for(T* a :  this->elementos){  //Devuelve el toString de cada uno de los elementos guardados
             frase = frase + "   " + a->to_string() + "\n"; //TODO: devuelve el toString de carga

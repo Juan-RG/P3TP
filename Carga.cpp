@@ -4,18 +4,8 @@
 
 #include "Carga.h"
 
-//Carga::Carga(const std::string nombre_, double volumen_, double peso_) : nombre(nombre_), volumen(volumen_), peso(peso_) { }
 Carga::Carga(const std::string nombre_, double volumen_, double peso_) : Objeto(nombre_, volumen_, peso_){ }
 
-/*
-std::string Carga::getNombre() const {
-    return nombre;
+std::string Carga::getTipo() const{
+    return tipo;
 }
-
-double Carga::getPeso() const {
-    return peso;
-}
-
-double Carga::getVolumen() const {
-    return volumen;
-}*/

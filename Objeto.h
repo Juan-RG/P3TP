@@ -16,10 +16,10 @@ protected:
 
 public:
     Objeto(const std::string nombre, double  volumen_, double peso_);
-    virtual double getPeso() const;                         //Tanto vol como peso en todas clases devuelven lo mismo
+    virtual double getPeso() const;
     virtual double getVolumen() const;
-    virtual std::string getNombre() const;                  //TODO: Igual esto hay que definirlo en esta clase y pasar nombre al constructor
-    virtual std::string to_string() const = 0;      //Igual incluso esta puede ser definida aqui, pero no estoy seguro, ya lo veremos
+    virtual std::string getNombre() const;
+    virtual std::string to_string() const = 0;
 
 };
 

@@ -7,20 +7,17 @@
 template <typename T>
 class Almacen {
 protected:
-    double capacidad;               //TODO:Constructor para meter capacidad de cada camion/contenedor?
-                                    //TODO:que sera capacidad(volumen)????
+    double capacidad;
     std::vector<T*> elementos;
 
 public:
-    Almacen(double capacidad): capacidad(capacidad) {};
+    Almacen(double capacidad_): capacidad(capacidad_) {};
 
     //virtual bool guardar(T& elemento) = 0;
 
     void guardar(T& elemento){
-           elementos.push_back(&elemento);       //lo guarda al final, como una cola
-           capacidad -= elemento.getVolumen();    //se reduce la capacidad de cosas que puede meter
+           elementos.push_back(&elemento);        //lo guarda al final, como una cola
+           capacidad -= elemento.getVolumen();    //Se reduce la capacidad de cosas que puede meter
     };
 
 };
-
-

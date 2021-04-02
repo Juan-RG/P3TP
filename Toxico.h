@@ -4,28 +4,23 @@
 
 #pragma once
 
-
 #include "Carga.h"
 
 class Toxico : protected Carga {
+private:
+    std::string tipo = "Productos Toxicos";
 public:
     Toxico(std::string nombre_, double  volumen_, double peso_): Carga(nombre_, volumen_, peso_) {};
 
-    std::string getNombre() const {
-        return nombre;
-    }
+    std::string getNombre() const;
 
-    double getPeso() const {
-        return peso;
-    }
+    double getPeso() const;
 
-    double getVolumen() const {
-        return volumen;
-    }
-    std::string to_string() const {
-        return this->nombre + " [" + std::to_string(this->volumen)
-               + " m3] [" + std::to_string(this->peso) + " kg]";
-    }
+    double getVolumen() const;
+
+    std::string to_string() const override;
+
+    std::string getTipo() const override;
 };
 
 

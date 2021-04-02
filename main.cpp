@@ -21,7 +21,7 @@ int main(int argc, char** argv)
     //test_comprobar toxicos con otros. Camion con toxicos
     //test comprobar seres vivos con otros
     //test de comprobacion de to_string --> de los diferentes clase 6-8
-    //Comporbar el metodo guardar en camion y en contenedor y comprobar que todo va okey
+    //Comprobar el metodo guardar en camion y en contenedor y comprobar que todo va okey
 
 
 

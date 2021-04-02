@@ -3,7 +3,7 @@
 //
 
 #include "Toxico.h"
-/*
+
 std::string Toxico::getNombre() const {
     return nombre;
 }
@@ -20,4 +20,6 @@ std::string Toxico::to_string() const {
     + " m3] [" + std::to_string(this->peso) + " kg]";
 }
 
- */
+std::string Toxico::getTipo() const{
+    return tipo;
+}

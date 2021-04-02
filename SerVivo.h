@@ -4,30 +4,23 @@
 
 #pragma once
 
-
 #include "Carga.h"
 
 class SerVivo : protected Carga {
+private:
+    std::string tipo = "Seres Vivos";
 public:
     SerVivo(std::string nombre_, double  volumen_, double peso_): Carga(nombre_, volumen_, peso_) {};
 
+    std::string getNombre() const override;
 
-    std::string getNombre() const {
-        return nombre;
-    }
+    double getPeso() const override;
 
-    double getPeso() const {
-        return peso;
-    }
+    double getVolumen() const override;
 
-    double getVolumen() const {
-        return volumen;
-    }
+    std::string to_string() const override;
 
-    std::string to_string() const override{
-        return this->nombre + " [" + std::to_string(this->volumen)
-               + " m3] [" + std::to_string(this->peso) + " kg]";
-    }
+    std::string getTipo() const override;
 };
 
 
