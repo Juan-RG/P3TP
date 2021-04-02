@@ -34,7 +34,7 @@ public:
                             + " m3] [" + std::to_string(this->peso) + " kg] de " + this->elementos[0]->getTipo() + "\n";
 
         for(T* a :  this->elementos){  //Devuelve el toString de cada uno de los elementos guardados
-            frase = frase + "   " + a->to_string() + "\n"; //TODO: devuelve el toString de carga
+            frase = frase + "    " + a->to_string() + "\n"; //TODO: devuelve el toString de carga
         }
 
         return frase;
