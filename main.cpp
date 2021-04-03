@@ -10,21 +10,21 @@ void test_contedor_lleno();
 
 void test_camion_lleno();
 
+void test_contedor_vacio();
+
 using namespace std;
 
 int main(int argc, char** argv)
 {
     test_camion_lleno();
     test_contedor_lleno();
+    test_contedor_vacio();
 
     //Todo: hacer
     //test_comprobar toxicos con otros. Camion con toxicos
     //test comprobar seres vivos con otros
     //test de comprobacion de to_string --> de los diferentes clase 6-8
     //Comprobar el metodo guardar en camion y en contenedor y comprobar que todo va okey
-
-
-
 
     Contenedor<Carga>	contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);
@@ -123,3 +123,16 @@ void test_contedor_lleno() {
     }
 }
 
+void test_contedor_vacio(){
+    Contenedor<Carga> contenedor_estandar(4);
+    Contenedor<Toxico>	contenedor_toxico(3);
+    Contenedor<SerVivo>	contenedor_servivo(2);
+
+    if (contenedor_estandar.getPeso() != 0){
+        cerr << "Test_contenedor_vacio FALLIDO";
+    } else if(contenedor_toxico.getPeso() != 0){
+        cerr << "Test_contenedor_vacio FALLIDO";
+    } else if(contenedor_servivo.getPeso() != 0){
+        cerr << "Test_contenedor_vacio FALLIDO";
+    }
+}

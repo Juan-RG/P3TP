@@ -3,7 +3,7 @@
 //
 
 #include "Producto.h"
-
+#include <cfenv>
 Producto::Producto(const std::string &nombre_, double volumen_, double peso_) : Carga(nombre_, volumen_, peso_){ }
 
 std::string Producto::to_string() const {

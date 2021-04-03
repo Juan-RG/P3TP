@@ -31,7 +31,13 @@ public:
         //TODO: ponga una cosa u otra (carga toxica, carga estandar etc)??? SOLUCIONADO???
 
         std::string frase = this->nombre + " [" + std::to_string(this->volumen)
-                            + " m3] [" + std::to_string(this->peso) + " kg] de " + this->elementos[0]->getTipo() + "\n";
+                            + " m3] [" + std::to_string(this->peso) + " kg]";
+
+        if(!this->elementos.empty()){
+            frase = frase + " de " + this->elementos[0]->getTipo() + "\n";
+        } else{
+            frase = frase + " vacio\n";
+        }
 
         for(T* a :  this->elementos){  //Devuelve el toString de cada uno de los elementos guardados
             frase = frase + "    " + a->to_string() + "\n"; //TODO: devuelve el toString de carga

@@ -33,7 +33,7 @@ public:
 std::ostream& operator<<(std::ostream& os, const Camion& ca)
 {
     os << ca.nombre + " [" + std::to_string(ca.volumen)
-                        + " m3] [" + std::to_string(ca.peso ) + " kg] \n";
+                        + " m3] [" + std::to_string(ca.peso) + " kg] \n";
 
     for(Carga* a :  ca.elementos){              //Devuelve el toString de cada uno de los elementos guardados
         os << "  " + a->to_string();           //TODO: devuelve el toString de carga
