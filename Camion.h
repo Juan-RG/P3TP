@@ -23,7 +23,8 @@ public:
     }
 
     std::string to_string() const {
-        return nombre + " " + std::to_string(capacidad) + " " + std::to_string(volumen);
+        return this->nombre + " [" + std::to_string(this->volumen)
+               + " m3] [" + std::to_string(this->peso) + " kg]\n";
     }
 
     friend std::ostream& operator<<(std::ostream& os, const Camion& dt);
@@ -33,7 +34,7 @@ public:
 std::ostream& operator<<(std::ostream& os, const Camion& ca)
 {
     os << ca.nombre + " [" + std::to_string(ca.volumen)
-                        + " m3] [" + std::to_string(ca.peso) + " kg] \n";
+                        + " m3] [" + std::to_string(ca.peso) + " kg]\n";
 
     for(Carga* a :  ca.elementos){              //Devuelve el toString de cada uno de los elementos guardados
         os << "  " + a->to_string();           //TODO: devuelve el toString de carga

@@ -12,6 +12,10 @@ void test_camion_lleno();
 
 void test_contedor_vacio();
 
+void test_toString_Producto();
+
+void test_toString_Contenedor_Camion();
+
 using namespace std;
 
 int main(int argc, char** argv)
@@ -20,13 +24,16 @@ int main(int argc, char** argv)
     test_contedor_lleno();
     test_contedor_vacio();
 
+    test_toString_Producto();
+    test_toString_Contenedor_Camion();
+
     //Todo: hacer
     //test_comprobar toxicos con otros. Camion con toxicos
     //test comprobar seres vivos con otros
     //test de comprobacion de to_string --> de los diferentes clase 6-8
     //Comprobar el metodo guardar en camion y en contenedor y comprobar que todo va okey
 
-    Contenedor<Carga>	contenedor_estandar(4);
+   /* Contenedor<Carga>	contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);
     Contenedor<SerVivo>	contenedor_servivo(2);
 
@@ -63,7 +70,7 @@ int main(int argc, char** argv)
         cout << "Camion lleno con Trenzas de Almudevar" << endl;
 
     cout << endl;
-    cout << camion << endl;
+    cout << camion << endl;*/
 
 /*
 La salida del programa hasta aquí deberia ser parecida a lo siguiente:
@@ -83,12 +90,12 @@ Camion [10 m3] [115.9 kg]
 
 */
 
-    Contenedor<Carga>	otro_contenedor_estandar(1);
+  /*  Contenedor<Carga>	otro_contenedor_estandar(1);
     Contenedor<Toxico>	otro_contenedor_toxico(1);
     Contenedor<SerVivo>	otro_contenedor_servivo(1);
     contenedor_estandar.guardar(otro_contenedor_estandar);
     contenedor_estandar.guardar(otro_contenedor_toxico);
-    contenedor_estandar.guardar(otro_contenedor_servivo);
+    contenedor_estandar.guardar(otro_contenedor_servivo);*/
     // Estas lineas no deberian compilar
     //contenedor_estandar.guardar(camion);
     //contenedor_toxico.guardar(otro_contenedor_toxico);
@@ -134,5 +141,59 @@ void test_contedor_vacio(){
         cerr << "Test_contenedor_vacio FALLIDO";
     } else if(contenedor_servivo.getPeso() != 0){
         cerr << "Test_contenedor_vacio FALLIDO";
+    }
+}
+
+void test_toString_Producto(){
+    Producto adoquines_zaragoza("Adoquines Madrid",0.5,5.0);
+    Toxico discos_melendi("Discos de pop",2,10);
+    SerVivo elvis_presley("Elvis Presley",0.3,100);
+
+    if (adoquines_zaragoza.to_string() != "Adoquines Madrid [0.500000 m3] [5.000000 kg]"){
+        cerr << "test_toString_Producto FALLIDO";
+    } else if(discos_melendi.to_string() != "Discos de pop [2.000000 m3] [10.000000 kg]"){
+        cerr << "test_toString_Producto FALLIDO";
+    } else if(elvis_presley.to_string() != "Elvis Presley [0.300000 m3] [100.000000 kg]"){
+        cerr << "test_toString_Producto FALLIDO";
+    }
+}
+
+void test_toString_Contenedor_Camion(){
+    Contenedor<Carga> contenedor_estandar(4);
+    Contenedor<Toxico>	contenedor_toxico(3);
+    Contenedor<SerVivo>	contenedor_servivo(3);
+
+    if (contenedor_estandar.to_string() != "Contenedor [4.000000 m3] [0.000000 kg] vacio\n"){
+        cerr << "test_toString_Contenedor FALLIDO";
+    } else if(contenedor_toxico.to_string() != "Contenedor [3.000000 m3] [0.000000 kg] vacio\n"){
+        cerr << "test_toString_Contenedor FALLIDO";
+    } else if(contenedor_servivo.to_string() != "Contenedor [3.000000 m3] [0.000000 kg] vacio\n"){
+        cerr << "test_toString_Contenedor FALLIDO";
+    }
+
+    Producto ladrillos_aragoneses("Ladrillos aragoneses",0.5,6.6);
+    Toxico ropa_sucia("Ropa sucia",3,5);
+    SerVivo el_Rey("El rey",0.3,100);
+
+    contenedor_estandar.guardar(ladrillos_aragoneses);
+    contenedor_toxico.guardar(ropa_sucia);
+    contenedor_servivo.guardar(el_Rey);
+
+    if (contenedor_estandar.to_string() != "Contenedor [4.000000 m3] [6.600000 kg] de Carga estandar\n"
+                                           "    Ladrillos aragoneses [0.500000 m3] [6.600000 kg]\n"){
+        cerr << "test_toString_Contenedor FALLIDO";
+    } else if(contenedor_toxico.to_string() != "Contenedor [3.000000 m3] [5.000000 kg] de Productos Toxicos\n"
+                                               "    Ropa sucia [3.000000 m3] [5.000000 kg]\n"){
+        cerr << "test_toString_Contenedor FALLIDO";
+    } else if(contenedor_servivo.to_string() != "Contenedor [3.000000 m3] [100.000000 kg] de Seres Vivos\n"
+                                                "    El rey [0.300000 m3] [100.000000 kg]\n"){
+        cerr << "test_toString_Contenedor FALLIDO";
+    }
+
+    Camion camion(20);
+    camion.guardar(contenedor_estandar);
+
+    if (camion.to_string() != "Camion [20.000000 m3] [6.600000 kg]\n"){
+        cerr << "test_toString_Camion FALLIDO";
     }
 }
