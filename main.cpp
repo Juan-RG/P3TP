@@ -6,6 +6,7 @@
 #include <iostream>
 #include "Camion.h"
 
+
 void test_contedor_lleno();
 
 void test_camion_lleno();
@@ -15,6 +16,10 @@ void test_contedor_vacio();
 void test_toString_Producto();
 
 void test_toString_Contenedor_Camion();
+
+void test_contenedores_especiales();
+
+void test_comprobar_guardar();
 
 using namespace std;
 
@@ -27,13 +32,12 @@ int main(int argc, char** argv)
     test_toString_Producto();
     test_toString_Contenedor_Camion();
 
+    test_contenedores_especiales();
+    test_comprobar_guardar();
     //Todo: hacer
-    //test_comprobar toxicos con otros. Camion con toxicos
-    //test comprobar seres vivos con otros
     //test de comprobacion de to_string --> de los diferentes clase 6-8
-    //Comprobar el metodo guardar en camion y en contenedor y comprobar que todo va okey
 
-   /* Contenedor<Carga>	contenedor_estandar(4);
+    Contenedor<Carga>	contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);
     Contenedor<SerVivo>	contenedor_servivo(2);
 
@@ -44,7 +48,7 @@ int main(int argc, char** argv)
 
     Toxico discos_melendi("Discos de Melendi",1,10);
     // Esto no deberia compilar
-    // contenedor_estandar.guardar(discos_melendi);
+    //contenedor_estandar.guardar(discos_melendi);
     contenedor_toxico.guardar(discos_melendi);
 
     Camion camion(10);
@@ -70,7 +74,7 @@ int main(int argc, char** argv)
         cout << "Camion lleno con Trenzas de Almudevar" << endl;
 
     cout << endl;
-    cout << camion << endl;*/
+    cout << camion << endl;
 
 /*
 La salida del programa hasta aquí deberia ser parecida a lo siguiente:
@@ -102,8 +106,70 @@ Camion [10 m3] [115.9 kg]
     //contenedor_servivo.guardar(otro_contenedor_servivo);
 }
 
+void test_comprobar_guardar() {
+    Contenedor<Carga>	contenedor_estandar(4);
+    Producto plastico("Plastico",1,1);
+    Camion ford(10);
+    contenedor_estandar.guardar(plastico);
 
+    if (contenedor_estandar.getSize() != 1){
+        cerr << "error guardar producto no introducido \n";
+    }
+    ford.guardar(contenedor_estandar);
+    if (ford.getSize() != 1){
+        cerr << "error guardar contenedor en camion \n";
+    }
+    Camion mercedes(3);
+    mercedes.guardar(plastico);
+    if (mercedes.getSize() != 1){
+        cerr << "error guardar producto en camion \n";
+    }
+    Contenedor<Toxico> contenedor_radiacion(4);
 
+    Toxico radiacion("Radiacion",1,1);
+
+    contenedor_radiacion.guardar(radiacion);
+
+    if (contenedor_radiacion.getSize() != 1){
+        cerr << "error guardar toxico en contenedor \n";
+    }
+    Camion hyundayi(5);
+
+    hyundayi.guardar(contenedor_radiacion);
+    if (hyundayi.getSize() != 1){
+        cerr << "error guardar contenedor toxico en camion \n";
+    }
+    /* error de compilacion
+    hyundayi.guardar(radiacion);
+    */
+}
+
+void test_contenedores_especiales() {
+    Contenedor<Carga>	contenedor_estandar(4);
+    Contenedor<Toxico>	contenedor_toxico(3);
+    Contenedor<SerVivo>	contenedor_servivo(2);
+
+    Contenedor<Carga>	otro_contenedor_estandar(1);
+    Contenedor<Toxico>	otro_contenedor_toxico(1);
+    Contenedor<SerVivo>	otro_contenedor_servivo(1);
+    contenedor_estandar.guardar(otro_contenedor_estandar);
+    contenedor_estandar.guardar(otro_contenedor_toxico);
+    contenedor_estandar.guardar(otro_contenedor_servivo);
+
+    Camion camion(10);
+    /*
+    // Estas lineas no deberian compilar
+    contenedor_estandar.guardar(camion);
+    contenedor_toxico.guardar(otro_contenedor_toxico);
+    contenedor_servivo.guardar(otro_contenedor_servivo);
+    SerVivo elvis_presley("Elvis Presley",0.1,100);
+    contenedor_toxico.guardar(elvis_presley);
+    contenedor_estandar.guardar(elvis_presley);
+    Toxico uranio("Elvis Presley",0.1,100);
+    contenedor_servivo.guardar(uranio);
+    contenedor_estandar.guardar(uranio);
+*/
+     }
 
 
 void test_camion_lleno() {

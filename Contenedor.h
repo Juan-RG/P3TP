@@ -13,8 +13,7 @@ template <typename T>
 class Contenedor : public Carga, public Almacen<T> {
 
 public:
-    Contenedor(double capacidad) : Carga("Contenedor", capacidad, 0), Almacen<T>(capacidad){}; //toDo: Error si introduce volumen 0 quitado por almacen
-
+    Contenedor(double capacidad) : Carga("Contenedor", capacidad, 0), Almacen<T>(capacidad){};
 
     bool guardar(T& elemento) {
         if(this->capacidad >= elemento.getVolumen()){     //Si tiene espacio en el contenedor
@@ -39,8 +38,8 @@ public:
             frase = frase + " vacio\n";
         }
 
-        for(T* a :  this->elementos){  //Devuelve el toString de cada uno de los elementos guardados
-            frase = frase + "    " + a->to_string() + "\n"; //TODO: devuelve el toString de carga
+        for(T* elemento :  this->elementos){  //Devuelve el toString de cada uno de los elementos guardados
+            frase = frase + "    " + elemento->to_string() + "\n"; //TODO: devuelve el toString de carga
         }
 
         return frase;

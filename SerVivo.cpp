@@ -1,7 +1,3 @@
-//
-// Created by Juan on 21/03/2021.
-//
-
 #include "SerVivo.h"
 
 std::string SerVivo::getNombre() const {
@@ -17,7 +13,7 @@ double SerVivo::getVolumen() const {
 }
 
 std::string SerVivo::to_string() const {
-    return this->nombre + " [" + std::to_string(this->volumen)
+    return  this->nombre + " [" + std::to_string(this->volumen)
     + " m3] [" + std::to_string(this->peso) + " kg]";
 }
 

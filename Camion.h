@@ -1,6 +1,3 @@
-//
-// Created by Juan on 21/03/2021.
-//
 
 #pragma once
 
@@ -9,7 +6,6 @@
 
 class Camion : public Almacen<Carga>, Objeto {
 public:
-    //Camion(double capacidad) : Almacen<T>(capacidad){}; //todo: Preguntar
     Camion(double capacidad) : Objeto("Camion", capacidad, 0), Almacen<Carga>(capacidad){};
 
     bool guardar(Carga& elemento) {
@@ -23,21 +19,19 @@ public:
     }
 
     std::string to_string() const {
-        return this->nombre + " [" + std::to_string(this->volumen)
-               + " m3] [" + std::to_string(this->peso) + " kg]\n";
+        return this->nombre + " [" + std::to_string(this->volumen) + " m3] [" + std::to_string(this->peso) + " kg]\n";
     }
 
     friend std::ostream& operator<<(std::ostream& os, const Camion& dt);
 
 };
 
-std::ostream& operator<<(std::ostream& os, const Camion& ca)
+std::ostream& operator<<(std::ostream& os, const Camion& camion)
 {
-    os << ca.nombre + " [" + std::to_string(ca.volumen)
-                        + " m3] [" + std::to_string(ca.peso) + " kg]\n";
+    os << camion.nombre + " [" + std::to_string(camion.volumen) + " m3] [" + std::to_string(camion.peso) + " kg]\n";
 
-    for(Carga* a :  ca.elementos){              //Devuelve el toString de cada uno de los elementos guardados
-        os << "  " + a->to_string();           //TODO: devuelve el toString de carga
+    for(Carga* carga :  camion.elementos){              //Devuelve el toString de cada uno de los elementos guardados
+        os << "  " + carga->to_string();           //TODO: devuelve el toString de carga
     }
     return os;
 }
