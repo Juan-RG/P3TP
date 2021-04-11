@@ -4,7 +4,7 @@
 
 class SerVivo : protected Carga {
 private:
-    std::string tipo = "Seres Vivos";
+    inline static const std::string TIPO = "Seres Vivos";
 public:
     SerVivo(std::string nombre_, double  volumen_, double peso_): Carga(nombre_, volumen_, peso_) {};
 

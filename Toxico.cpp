@@ -19,5 +19,5 @@ std::string Toxico::to_string() const {
 }
 
 std::string Toxico::getTipo() const{
-    return tipo;
+    return TIPO;
 }

@@ -1,5 +1,7 @@
 #include "SerVivo.h"
 
+
+
 std::string SerVivo::getNombre() const {
     return nombre;
 }
@@ -18,5 +20,5 @@ std::string SerVivo::to_string() const {
 }
 
 std::string SerVivo::getTipo() const{
-    return tipo;
+    return TIPO;
 }

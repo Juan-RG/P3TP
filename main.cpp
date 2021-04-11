@@ -34,8 +34,6 @@ int main(int argc, char** argv)
 
     test_contenedores_especiales();
     test_comprobar_guardar();
-    //Todo: hacer
-    //test de comprobacion de to_string --> de los diferentes clase 6-8
 
     Contenedor<Carga>	contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);

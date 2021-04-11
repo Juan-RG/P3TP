@@ -7,7 +7,7 @@
 #include <iostream>
 #include "Carga.h"
 #include "Almacen.h"
-
+#include <typeinfo>
 
 template <typename T>
 class Contenedor : public Carga, public Almacen<T> {
@@ -26,9 +26,6 @@ public:
     }
 
     std::string to_string() const override {
-        //TODO: COMO PONGO LO DE CARGA ESTANDAR? meto otro string tipo y que dependiendo de la carga que metas ese string
-        //TODO: ponga una cosa u otra (carga toxica, carga estandar etc)??? SOLUCIONADO???
-
         std::string frase = this->nombre + " [" + std::to_string(this->volumen)
                             + " m3] [" + std::to_string(this->peso) + " kg]";
 
@@ -39,7 +36,7 @@ public:
         }
 
         for(T* elemento :  this->elementos){  //Devuelve el toString de cada uno de los elementos guardados
-            frase = frase + "    " + elemento->to_string() + "\n"; //TODO: devuelve el toString de carga
+            frase = frase + "    " + elemento->to_string() + "\n";
         }
 
         return frase;

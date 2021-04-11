@@ -5,7 +5,7 @@
 
 class Carga : public Objeto {
 private:
-    std::string tipo = "Carga estandar";
+    inline static const std::string TIPO = "Carga estandar";
 public:
     Carga(const std::string nombre, double  volumen_, double peso_);
 

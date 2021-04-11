@@ -5,7 +5,7 @@
 
 class Toxico : protected Carga {
 private:
-    std::string tipo = "Productos Toxicos";
+    inline static const std::string TIPO = "Productos Toxicos";
 public:
     Toxico(std::string nombre_, double  volumen_, double peso_): Carga(nombre_, volumen_, peso_) {};
 

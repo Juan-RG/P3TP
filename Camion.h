@@ -22,7 +22,7 @@ public:
         return this->nombre + " [" + std::to_string(this->volumen) + " m3] [" + std::to_string(this->peso) + " kg]\n";
     }
 
-    friend std::ostream& operator<<(std::ostream& os, const Camion& dt);
+    friend std::ostream& operator<<(std::ostream& os, const Camion& ca);
 
 };
 
