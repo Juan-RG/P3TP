@@ -1,6 +1,6 @@
 #include "SerVivo.h"
 
-
+const std::string SerVivo::TIPO = "Seres Vivos";
 
 std::string SerVivo::getNombre() const {
     return nombre;

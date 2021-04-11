@@ -7,11 +7,11 @@
 #include "Camion.h"
 
 
-void test_contedor_lleno();
+void test_contenedor_lleno();
 
 void test_camion_lleno();
 
-void test_contedor_vacio();
+void test_contenedor_vacio();
 
 void test_toString_Producto();
 
@@ -26,8 +26,8 @@ using namespace std;
 int main(int argc, char** argv)
 {
     test_camion_lleno();
-    test_contedor_lleno();
-    test_contedor_vacio();
+    test_contenedor_lleno();
+    test_contenedor_vacio();
 
     test_toString_Producto();
     test_toString_Contenedor_Camion();
@@ -92,12 +92,12 @@ Camion [10 m3] [115.9 kg]
 
 */
 
-  /*  Contenedor<Carga>	otro_contenedor_estandar(1);
+    Contenedor<Carga>	otro_contenedor_estandar(1);
     Contenedor<Toxico>	otro_contenedor_toxico(1);
     Contenedor<SerVivo>	otro_contenedor_servivo(1);
     contenedor_estandar.guardar(otro_contenedor_estandar);
     contenedor_estandar.guardar(otro_contenedor_toxico);
-    contenedor_estandar.guardar(otro_contenedor_servivo);*/
+    contenedor_estandar.guardar(otro_contenedor_servivo);
     // Estas lineas no deberian compilar
     //contenedor_estandar.guardar(camion);
     //contenedor_toxico.guardar(otro_contenedor_toxico);
@@ -182,7 +182,7 @@ void test_camion_lleno() {
     }
 }
 
-void test_contedor_lleno() {
+void test_contenedor_lleno() {
     Contenedor<Carga>	contenedor1(4);
     Contenedor<Carga>	contenedor2(4);
     contenedor1.guardar(contenedor2);
@@ -194,7 +194,7 @@ void test_contedor_lleno() {
     }
 }
 
-void test_contedor_vacio(){
+void test_contenedor_vacio(){
     Contenedor<Carga> contenedor_estandar(4);
     Contenedor<Toxico>	contenedor_toxico(3);
     Contenedor<SerVivo>	contenedor_servivo(2);

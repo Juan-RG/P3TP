@@ -1,6 +1,8 @@
 
 #include "Toxico.h"
 
+const std::string Toxico::TIPO = "Productos Toxicos";
+
 std::string Toxico::getNombre() const {
     return nombre;
 }
