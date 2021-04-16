@@ -15,7 +15,6 @@ public:
     virtual double getVolumen() const;
     virtual std::string getNombre() const;
     virtual std::string to_string() const = 0;
-
 };
 
 

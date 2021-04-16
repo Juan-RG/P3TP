@@ -14,7 +14,6 @@ class Contenedor : public Carga, public Almacen<T> {
 
 public:
     Contenedor(double capacidad) : Carga("Contenedor", capacidad, 0), Almacen<T>(capacidad){};
-
     bool guardar(T& elemento) {
         if(this->capacidad >= elemento.getVolumen()){     //Si tiene espacio en el contenedor
             Almacen<T>::guardar(elemento);                //se reduce la capacidad de cosas que puede meter
